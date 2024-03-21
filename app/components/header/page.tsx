@@ -10,7 +10,7 @@ function Header() {
   return (
     <div className="flex flex-row gap-x-3 justify-between items-center px-4 bg-black bg-opacity-[15%] ">
       <div>
-        <Link href={"/"} className="items-center">
+        <Link href={"/homescreen"} className="items-center">
           <Image src={logo} alt="" width={100} height={10} />
         </Link>
       </div>
@@ -20,7 +20,7 @@ function Header() {
             Create <GoPencil />
           </div>
         </Link>
-        <Link href={"./homescreen"} >
+        <Link href={"/blogscreen"} >
           <div className="flex flex-row items-center gap-x-2">
             Blogs <IoReaderOutline />
           </div>{" "}
