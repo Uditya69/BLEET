@@ -5,6 +5,7 @@ import Image from "next/image";
 import { GoPencil } from "react-icons/go";
 import { IoReaderOutline } from "react-icons/io5";
 import { FaRegUser } from "react-icons/fa";
+import { UserButton } from "@clerk/nextjs";
 
 function Header() {
   return (
@@ -28,7 +29,7 @@ function Header() {
         <Link href={""}>
           {" "}
           <div>
-            <FaRegUser />
+            <UserButton/>
           </div>
         </Link>
       </div>
