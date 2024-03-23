@@ -1,17 +1,23 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+import { FirebaseApp, initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDYEM9brDJH1yzpFzXSC_mV2PawGsw4Ecw",
-  authDomain: "bleet-3aa4c.firebaseapp.com",
-  projectId: "bleet-3aa4c",
-  storageBucket: "bleet-3aa4c.appspot.com",
-  messagingSenderId: "765609031727",
-  appId: "1:765609031727:web:4f5cad8c034d716f3f6eda"
+  apiKey: "AIzaSyDTbGCOKH30lPcdvGGMZqi2avtf_U4VsmA",
+  authDomain: "bleet-aeb48.firebaseapp.com",
+  projectId: "bleet-aeb48",
+  storageBucket: "bleet-aeb48.appspot.com",
+  messagingSenderId: "1063808821887",
+  appId: "1:1063808821887:web:a8cd16bbe168c60ad16d4a"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+export const storage = getStorage(app);
+export const db = getFirestore(app)
+
+ 
