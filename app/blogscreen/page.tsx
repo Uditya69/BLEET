@@ -1,9 +1,13 @@
-import React from 'react'
 
-function BlogScreen() {
+import React from 'react'
+import Bleets from './Bleets'
+ function Blogscreen() {
   return (
-    <div>Blogs will be feteched here</div>
+    <div>
+      hello
+      <Bleets/>
+    </div>
   )
 }
 
-export default BlogScreen
+export default Blogscreen
