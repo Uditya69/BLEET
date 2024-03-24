@@ -1,69 +1,82 @@
 "use client";
-import React from "react";
-import Lottie from "lottie-react";
-import penguin from "@/assets/typing.json";
+import React, { useEffect, useRef, useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "@/firebase";
-
- 
-
+import Typed from "typed.js";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function CreatePost() {
-  const {user}=useUser();
-  console.log(user);
-  const username = user?user.username:"";
-  console.log(username);
-  const handlePost = async(e:any) => {
+  const { user } = useUser();
+  const username = user ? user.username : "";
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const handlePost = async (e: any) => {
     e.preventDefault();
-    const title =  e.target[0].value;
-    const content = e.target[1].value;
-    
+
     try {
       const docRef = await addDoc(collection(db, "bleet"), {
         username: username,
         title: title,
-        content: content
+        content: content,
       });
-      //console.log("Document written with ID: ", docRef.id);
+      console.log("Document written with ID: ", docRef.id);
+      setContent("");
+      setTitle("");
+      toast.success("Post created successfully!");
     } catch (e) {
       console.error("Error adding document: ", e);
+      toast.error("Unable to Create post !");
     }
-    
-  }
-  
+  };
+  const el = useRef(null);
+  useEffect(() => {
+    const typed = new Typed(el.current, {
+      strings: [`Yoo ${username}! What's cookin?🧑‍🍳`],
+      startDelay: 250,
+      typeSpeed: 100,
+      backSpeed: 100,
+      fadeOut: true,
+      loop: false,
+    });
+    return () => {
+      typed.destroy();
+    };
+  }, [user]);
   return (
     <>
-      <div className="flex flex-row  justify-center h-full bg-opacity-25 ">
-    <Lottie animationData={penguin} className="h-[25vh] fixed z-0 blur-sm" />
-        <div className="h-[88vh] items-center flex flex-col gap-2">
+    <ToastContainer/>
+      <div className="flex flex-col w-fit  justify-center items-centre m-auto h-full p-5 gap-y-5">
+        <div className="items-center m-auto ">
+          {" "}
+          <span
+            ref={el}
+            className="bg-gradient-to-r from-slate-300 to-gray-400 bg-clip-text text-transparent p-5 rounded-xl text-2xl self-center font-mono font-bold"
+          />{" "}
+        </div>
+        <div>
           <form
-            className="z-10 flex flex-col gap-y-3 justify-evenly
-          border border-gray-400 p-2 w-[40vw] h-fit   rounded-md bg-black bg-opacity-50"
-         onSubmit={handlePost}
-         >
-            <label htmlFor="title" className="text-xl p-3">
-             Heyy  What's on your mind today?
-            </label>
-            <div className="p-2 gap-x-3 gap-y-2 flex flex-row">
-              <label htmlFor="title">Title:</label>
+            className="flex flex-col gap-3 border-[1px] bg-black bg-opacity-[6%] border-gray-500 rounded-xl p-5 h-[70vh] w-[80vw]"
+            onSubmit={handlePost}
+          >
+            <div className="w-full flex flex-row items-center">
+              <label>•</label>
               <input
                 type="text"
-                id="title"
-                className=" bg-transparent border-b-[1.5px] border-gray-400"
-              />
-            </div>
-            <div className="p-2 gap-x-3 gap-y-2 flex flex-row">
-              <label htmlFor="title">Content: </label>
-              <textarea
-                id="bleet"
-                className=" bg-transparent border-b-[1.5px] border-gray-400"
+                placeholder="Title ✏️"
+                className="bg-transparent border-b-[1px] border-gray-600 w-full p-5 text-2xl"
+                onChange={(e) => setTitle(e.target.value)}
               />
             </div>
 
+            <textarea
+              placeholder="Spill the tea☕"
+              className="h-full p-10 bg-transparent border-0 text-2xl"
+              onChange={(e) => setContent(e.target.value)}
+            />
             <button
               type="submit"
-              className="self-end mx-5 bg-green-900 p-2 rounded-3xl"
-               
+              className="p-2 px-2 rounded-2xl text-xl self-end bg-emerald-400 bg-opacity-55"
             >
               Post
             </button>
