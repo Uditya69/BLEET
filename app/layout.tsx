@@ -20,11 +20,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="bg-gradient-to-r from-slate-800 to-gray-900 text-white "
+      className="bg-gray-800 text-white "
     >
       <body className={inter.className}>
         <ClerkProvider>
-
+        
            <Header />
           {children}
         </ClerkProvider>

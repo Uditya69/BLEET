@@ -30,13 +30,20 @@ function Bleets() {
   }, []);
 
   return (
-    <div className="flex justify-center w-[80vw]  m-auto self-center">
-       <div className=" grid grid-cols-1 items-center font-thin">
+    <div className="flex justify-center w-[80vw]  m-auto self-center font-mono">
+      <div className=" grid grid-cols-1 items-center">
         {bleets.map((bleet) => (
-          <div className="backdrop-blur-sm bg-gray-800 min-w-[50vw] border-[1px] border-gray-500 mt-3 w-fit rounded-md flex flex-col self-center m-auto gap-2"  key={bleet.id}>
-            <h2 className=" text-lg font-bold self-center text-gray-100 border-b-[1px] border-gray-300 p-2 pb-0">{bleet.title}</h2>
-            <p className="text-md text-gray-200 border-y-[1px] border-gray-600 p-3 max-h-[40vh] overflow-y-auto">{bleet.content}</p>
-            <p className="self-end text-sm font-semibold text-gray-400 p-2 px-5">By: {bleet.username}</p>
+          <div
+            className="backdrop-blur-sm w-[80vw] transition duration-700 ease-in-out text-gray-400 border-[1px] p-2 px-4 border-gray-600 rounded-lg my-3 bg-black bg-opacity-15 hover:bg-gray-800 hover:text-gray-300 hover:border-blue-300"
+            key={bleet.id}
+          >
+            <h2 className=" text-lg font-bold self-center px-4 p-1 pb-2 border-b-[1px] text-orange-300 border-gray-700">
+            • {bleet.username}: {bleet.title}
+            </h2>
+            <p className="text-md mt-1  p-3 max-h-[40vh] overflow-y-auto ">
+              {bleet.content}
+            </p>
+            
           </div>
         ))}
       </div>
@@ -44,5 +51,4 @@ function Bleets() {
   );
 }
 
- 
 export default Bleets;
