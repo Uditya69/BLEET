@@ -30,13 +30,13 @@ function Bleets() {
   }, []);
 
   return (
-    <div>
-       <div>
+    <div className="flex justify-center w-[80vw]  m-auto self-center">
+       <div className=" grid grid-cols-1 items-center font-thin">
         {bleets.map((bleet) => (
-          <div className="bg-blue-400 border-2 m-2" key={bleet.id}>
-            <h2 className="bg-purple-600">{bleet.title}</h2>
-            <p className="bg-yellow-600">{bleet.content}</p>
-            <p className="bg-red-700">Author: {bleet.username}</p>
+          <div className="backdrop-blur-sm bg-gray-800 min-w-[50vw] border-[1px] border-gray-500 mt-3 w-fit rounded-md flex flex-col self-center m-auto gap-2"  key={bleet.id}>
+            <h2 className=" text-lg font-bold self-center text-gray-100 border-b-[1px] border-gray-300 p-2 pb-0">{bleet.title}</h2>
+            <p className="text-md text-gray-200 border-y-[1px] border-gray-600 p-3 max-h-[40vh] overflow-y-auto">{bleet.content}</p>
+            <p className="self-end text-sm font-semibold text-gray-400 p-2 px-5">By: {bleet.username}</p>
           </div>
         ))}
       </div>
