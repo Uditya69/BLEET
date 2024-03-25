@@ -8,7 +8,7 @@ import { UserButton } from "@clerk/nextjs";
 
 function Header() {
   return (
-    <div className="flex flex-row gap-x-3 justify-between items-center px-4  backdrop-blur-md bg-opacity-[25%] w-[80vw] ">
+    <div className="flex flex-row gap-x-3 justify-between items-center px-4  backdrop-blur-md bg-opacity-[25%] w-[80vw] text-gray-300">
       <div>
         <Link href={"/homescreen"} className="items-center">
           <Image src={logo} alt="" width={120} height={15} />
