@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import logo from "@/assets/logo.png";
 import Image from "next/image";
 import { GoPencil } from "react-icons/go";
 import { IoReaderOutline } from "react-icons/io5";
@@ -11,7 +10,12 @@ function Header() {
     <div className="flex flex-row gap-x-3 justify-between items-center px-4  backdrop-blur-md bg-opacity-[25%] w-[80vw] text-gray-300">
       <div>
         <Link href={"/homescreen"} className="items-center">
-          <Image src={logo} alt="" width={120} height={15} />
+          <Image
+            src="https://firebasestorage.googleapis.com/v0/b/bleet-aeb48.appspot.com/o/logo.png?alt=media&token=93136594-dc32-4922-a91f-def82bdfa23f"
+            alt=""
+            width={120}
+            height={15}
+          />
         </Link>
       </div>
       <div className="text-2xl flex flex-row gap-x-5 items-center h">
@@ -39,7 +43,7 @@ function Header() {
                 },
               }}
             />
-            <SignedOut >
+            <SignedOut>
               <SignInButton afterSignInUrl="/" mode="modal" />
             </SignedOut>
           </div>
