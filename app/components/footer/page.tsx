@@ -7,7 +7,7 @@ function Footer() {
       <div className="flex flex-row items-center text-gray-400 font-mono ">
         <Link href={"/homescreen"}>
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/bleet-aeb48.appspot.com/o/logo.png?alt=media&token=93136594-dc32-4922-a91f-def82bdfa23f"
+            src="https://ik.imagekit.io/uditya/Logos/bleet.png?updatedAt=1711403609222"
             height={100}
             width={100}
             alt=""
