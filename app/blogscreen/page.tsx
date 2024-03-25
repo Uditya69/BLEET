@@ -3,9 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Bleets from "./Bleets";
 import Typed from "typed.js"
 import { useUser } from "@clerk/nextjs";
-import Lottie from "lottie-react";
-import stars from "@/assets/stars.json";
-function Blogscreen() {
+  function Blogscreen() {
   const [greet, setGreet] = useState(" sup");
   useEffect(() => {
     const today = new Date();

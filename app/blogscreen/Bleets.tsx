@@ -34,7 +34,7 @@ function Bleets() {
       <div className=" grid grid-cols-1 items-center">
         {bleets.map((bleet) => (
           <div
-            className="backdrop-blur-sm w-[80vw] transition duration-700 ease-in-out text-gray-400 border-[1px] p-2 px-4 border-gray-600 rounded-lg my-3 bg-black bg-opacity-15 hover:bg-gray-800 hover:text-gray-300 hover:border-blue-300"
+            className="backdrop-blur-sm w-[80vw] transition duration-700 ease-in-out text-gray-400 border-[1px] p-2 px-4 border-gray-600 rounded-lg my-3 bg-black bg-opacity-20 hover:bg-gray-900 hover:hover:text-gray-300 hover:border-blue-300"
             key={bleet.id}
           >
             <h2 className=" text-lg font-bold self-center px-4 p-1 pb-2 border-b-[1px] text-orange-300 border-gray-700">

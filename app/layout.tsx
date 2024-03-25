@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="bg-gray-800 text-white "
+      className="bg-gray-900 text-white "
     >
       <body className={inter.className}>
         <ClerkProvider appearance={{
