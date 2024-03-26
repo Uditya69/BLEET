@@ -4,7 +4,7 @@ import React from "react";
 function HomeScreen() {
   return (
     <div className="w-[80vw]">
-      <div className="p-5 mx-10  flex flex-col items-center bg-black bg-opacity-10 rounded-2xl">
+      <div className="p-5 mx-10  flex flex-col items-center bg-black bg-opacity-15 border-[1px] border-sky-950 rounded-2xl">
         <p className="text-4xl font-mono font-bold ">
           <span className="bg-gradient-to-r from-violet-400 to-pink-400 bg-clip-text text-transparent">
             {" "}

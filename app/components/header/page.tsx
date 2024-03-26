@@ -9,7 +9,7 @@ function Header() {
     <div className="flex flex-row gap-x-3 justify-between items-center px-4  backdrop-blur-md bg-opacity-[25%] w-[80vw] text-gray-300">
       <div>
         <Link href={"/homescreen"} className="items-center">
-          <img src="https://ik.imagekit.io/uditya/Logos/bleet.png?updatedAt=1711403611670" alt="" className="h-[15vh] w-[13vw]"/>
+          <img src="https://ik.imagekit.io/uditya/Logos/bleet.png?updatedAt=1711403611670" alt="" className="h-[120px] w-[130px]"/>
         </Link>
       </div>
       <div className="text-2xl flex flex-row gap-x-5 items-center h">

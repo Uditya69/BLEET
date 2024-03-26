@@ -5,7 +5,7 @@ function Footer() {
     <>
       <div className="flex flex-row items-center text-gray-400 font-mono ">
         <Link href={"/homescreen"}>
-        <img src="https://ik.imagekit.io/uditya/Logos/bleet.png?updatedAt=1711403611670" alt="" className="h-[15vh] w-[13vw]"/>
+        <img src="https://ik.imagekit.io/uditya/Logos/bleet.png?updatedAt=1711403611670" alt="" className="h-[120px] w-[130px]"/>
 
         </Link>
         <p className="text-3xl">|</p>
