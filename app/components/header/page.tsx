@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import Image from "next/image";
 import { GoPencil } from "react-icons/go";
 import { IoReaderOutline } from "react-icons/io5";
 import { SignInButton, SignedOut, UserButton } from "@clerk/nextjs";
@@ -10,12 +9,7 @@ function Header() {
     <div className="flex flex-row gap-x-3 justify-between items-center px-4  backdrop-blur-md bg-opacity-[25%] w-[80vw] text-gray-300">
       <div>
         <Link href={"/homescreen"} className="items-center">
-          <Image
-            src="https://ik.imagekit.io/uditya/Logos/bleet.png?updatedAt=1711403609222"
-            alt=""
-            width={120}
-            height={15}
-          />
+          <img src="https://ik.imagekit.io/uditya/Logos/bleet.png?updatedAt=1711403611670" alt="" className="h-[15vh] w-[13vw]"/>
         </Link>
       </div>
       <div className="text-2xl flex flex-row gap-x-5 items-center h">
