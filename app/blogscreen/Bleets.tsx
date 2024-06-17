@@ -1,6 +1,7 @@
 "use client";
 import { db } from "@/firebase";
 import { collection, getDocs } from "firebase/firestore";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 interface bleet {
@@ -33,7 +34,8 @@ function Bleets() {
     <div className="flex justify-center w-[80vw]  m-auto self-center font-mono">
       <div className=" grid grid-cols-1 items-center">
         {bleets.map((bleet) => (
-          <div
+          <Link href={`/blogscreen/${bleet.id}`}
+          target="_blank"
             className="backdrop-blur-sm w-[80vw] transition duration-700 ease-in-out text-gray-400 border-[1px] p-2 px-4 border-gray-600 rounded-lg my-3 bg-black bg-opacity-20 hover:bg-gray-900 hover:hover:text-gray-300 hover:border-blue-300"
             key={bleet.id}
           >
@@ -44,7 +46,7 @@ function Bleets() {
               {bleet.content}
             </p>
             
-          </div>
+          </Link>
         ))}
       </div>
     </div>
