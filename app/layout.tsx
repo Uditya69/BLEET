@@ -1,13 +1,13 @@
 
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Sora } from "next/font/google";
 import "./globals.css";
 import Header from "./components/header/page";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import Footer from "./components/footer/page";
  
-const inter = Inter({ subsets: ["latin"] });
+const inter = Sora({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Bleet",
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="bg-gray-900 text-white "
+      className="bg-[#121212] text-white "
     >
       <body className={inter.className}>
         <ClerkProvider appearance={{
