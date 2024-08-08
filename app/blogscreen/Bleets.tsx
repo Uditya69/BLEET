@@ -32,6 +32,7 @@ function Bleets() {
 
   return (
     <div className="flex justify-center w-[80vw]  m-auto self-center font-mono">
+      
       <div className=" grid grid-cols-1 items-center">
         {bleets.map((bleet) => (
           <Link href={`/blogscreen/${bleet.id}`}
