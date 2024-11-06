@@ -5,9 +5,13 @@ import Typed from "typed.js";
 import { useUser } from "@clerk/nextjs";
 import Link from "next/link";
 import { CgSearch } from "react-icons/cg";
+import MyBleets from "./MyBleets";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Blogscreen() {
   const [greet, setGreet] = useState(" sup");
+  const [searchQuery, setSearchQuery] = useState("");
   useEffect(() => {
     const today = new Date();
     const curHr = today.getHours();
@@ -21,8 +25,8 @@ function Blogscreen() {
     }
   }, []);
   const { user } = useUser();
-  console.log(user);
   const username = user ? user.username : "";
+  const [activeTab, setActiveTab] = useState("all");
 
   const el = useRef(null);
   useEffect(() => {
@@ -41,34 +45,39 @@ function Blogscreen() {
 
   return (
     <div>
-      <div className="flex flex-col items-center">
+      <div className="flex h-screen flex-col items-center">
         <div className="font-mono text-xl bg-black p-3 rounded-xl bg-opacity-15 flex flex-col items-center justify-between">
           <p>
-            <span ref={el} className="text-blue-400" />{" "}
+        <span ref={el} className="text-blue-400" />{" "}
           </p>
         </div>
         <div className="flex items-center justify-between w-full">
           <div>
-            {" "}
-            <Link href={""} className="underline">
-              All
-            </Link>{" "}
-            <Link href={""} className="">Mine</Link>
+        <Link href="#" className={activeTab === "all" ? "underline" : ""} onClick={() => setActiveTab("all")}>
+          All
+        </Link>{" "}
+        <Link href="#" className={activeTab === "mine" ? "underline" : ""} onClick={() => setActiveTab("mine")}>
+          Mine
+        </Link>
           </div>
           <div className="flex items-center gap-2 p-2 pb-0 border-b border-gray-600 ">
-            <CgSearch />
-
-            <input
-              placeholder="search"
-              type="text"
-              className="p-2 pb-4 outline-none bg-transparent"
-            />
+        <CgSearch />
+        <input
+          placeholder="search"
+          type="text"
+          className="p-2 pb-4 outline-none bg-transparent"
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
           </div>
         </div>
-        <Bleets />
+        <div className="max-h-[90%] overflow-scroll">
+          {activeTab === "all" ? <Bleets searchTerm={searchQuery} /> : <MyBleets searchTerm={searchQuery} />}
+        </div>
       </div>
+      <ToastContainer/>
     </div>
   );
 }
+
 
 export default Blogscreen;

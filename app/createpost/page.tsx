@@ -6,11 +6,15 @@ import { db } from "@/firebase";
 import Typed from "typed.js";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useRouter } from "next/navigation";
+
 function CreatePost() {
   const { user } = useUser();
   const username = user ? user.username : "";
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const router = useRouter();
+
   const handlePost = async (e: any) => {
     e.preventDefault();
 
@@ -24,6 +28,7 @@ function CreatePost() {
       setContent("");
       setTitle("");
       toast.success("Post created successfully!");
+      router.push("/blogscreen");
     } catch (e) {
       console.error("Error adding document: ", e);
       toast.error("Unable to Create post !");
