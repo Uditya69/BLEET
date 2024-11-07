@@ -11,11 +11,11 @@ function Footer() {
         <p className="text-3xl">|</p>
 
         <Link
-          href={"https://uditya.xyz"}
+          href={"https://uditya.dev"}
           target="_blank"
           className="text-xl hover:text-sky-500"
         >
-          © uditya.xyz
+          © uditya.dev
         </Link>
       </div>
     </>
